@@ -1,7 +1,7 @@
 package ca.valencik
 
 object DayOne extends App {
-  def apply(numString: String): Int = {
+  def partOne(numString: String): Int = {
     val listChars = numString.toList :+ numString.toList.head
     listChars
       .sliding(2)
@@ -12,5 +12,5 @@ object DayOne extends App {
       .sum
   }
 
-  println("InverseCaptcha: " + apply(args(0)))
+  println("InverseCaptcha partOne: " + partOne(args(0)))
 }
