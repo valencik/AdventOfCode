@@ -9,3 +9,6 @@ cache:
 
 jdk:
   - oraclejdk8
+
+script:
+  - sbt clean scalastyle test:scalastyle test
