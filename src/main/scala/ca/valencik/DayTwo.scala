@@ -1,10 +1,12 @@
 package ca.valencik
 
+import ca.valencik.Utils.putStrLn
+
 object DayTwo extends App {
   def partOne(numString: String): Int = {
     val rows = numString.lines.toList.map(_.trim).filter(_.nonEmpty)
     rows
-      .map(row => { 
+      .map(row => {
         val numRow = row.split("\\s+").map(_.toInt)
         numRow.max - numRow.min
       })
@@ -14,7 +16,7 @@ object DayTwo extends App {
   def partTwo(numString: String): Int = {
     val rows = numString.lines.toList.map(_.trim).filter(_.nonEmpty)
     rows
-      .map(row => { 
+      .map(row => {
         val numRow = row.split("\\s+").map(_.toInt)
         (for {
         i <- 0 to numRow.length - 1
@@ -27,6 +29,6 @@ object DayTwo extends App {
       .sum
   }
 
-  println("partOne: " + partOne(args(0)))
-  println("partTwo: " + partTwo(args(0)))
+  putStrLn("partOne: " + partOne(args(0)))
+  putStrLn("partTwo: " + partTwo(args(0)))
 }

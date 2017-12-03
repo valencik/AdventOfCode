@@ -1,5 +1,7 @@
 package ca.valencik
 
+import ca.valencik.Utils.putStrLn
+
 object DayOne extends App {
   def partOne(numString: String): Int = {
     val listChars = numString.toList :+ numString.toList.head
@@ -24,6 +26,6 @@ object DayOne extends App {
       .sum
   }
 
-  println("InverseCaptcha partOne: " + partOne(args(0)))
-  println("InverseCaptcha partTwo: " + partTwo(args(0)))
+  putStrLn("InverseCaptcha partOne: " + partOne(args(0)))
+  putStrLn("InverseCaptcha partTwo: " + partTwo(args(0)))
 }
