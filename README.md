@@ -13,6 +13,9 @@ Yak Shave: [Travis CI](#travis-ci)
 - [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/DayThree.scala)
 Yak Shave: [Scalastyle](#scalastyle)
 
+- [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/DayFour.scala)
+Yak Shave: [PR Template](#pr-template)
+
 
 Yak Shaves
 ==========
@@ -36,3 +39,8 @@ Day 2 yak shave gets this [.travis.yml](.travis.yml) setup to build and run our 
 Scalastyle checks your scala code for common mistakes and bad practices.
 I've taken the configuration used by [typelevel/cats](https://github.com/typelevel/cats) with a few custom rules removed.
 The Travis CI setup got an update to make scalastyle run on CI for both `src` and `tests`.
+
+
+## PR Template
+
+I forgot to update the README when I implemented Day 3's yak shave, so I figured today's yak shave could be a simple PR template to remind me to update the README in the future.
