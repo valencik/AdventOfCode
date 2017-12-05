@@ -16,6 +16,9 @@ Yak Shave: [Scalastyle](#scalastyle)
 - [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/DayFour.scala)
 Yak Shave: [PR Template](#pr-template)
 
+- [x] [Day 5: ???](src/main/scala/ca/valencik/DayFive.scala)
+Yak Shave: ???
+
 
 Yak Shaves
 ==========
