@@ -1,8 +1,10 @@
 package ca.valencik
 
-import ca.valencik.Utils.putStrLn
+import ca.valencik.Utils.{putStrLn, perfTime}
 
 import scala.annotation.tailrec
+import scala.io.Source
+import scala.collection.mutable.ArrayOps
 
 object DayFive extends App {
   def executeJumpInstructions(instructions: List[Int]): Int = {
@@ -17,6 +19,22 @@ object DayFive extends App {
         inner(acc + 1, is.updated(c, jump + 1), c + jump)
     }
     inner(0, instructions, 0)
+  }
+
+  def executeJumpInstructionsArray(instructions: Array[Int]): Int = {
+    val size = instructions.length
+
+    @tailrec
+    def inner(acc: Int, c: Int): Int = {
+      val jump = instructions(c)
+      if (c + jump >= size)
+        acc + 1
+      else {
+        instructions.update(c, jump + 1)
+        inner(acc + 1, c + jump)
+      }
+    }
+    inner(0, 0)
   }
 
   def executeStrangerJumpInstructions(instructions: List[Int]): Int = {
@@ -34,18 +52,45 @@ object DayFive extends App {
     inner(0, instructions, 0)
   }
 
-  def process(input: String): List[Int] = {
-    input.split("\\s+").map(_.toInt).toList
+  def executeStrangerJumpInstructionsArray(instructions: Array[Int]): Int = {
+    val size = instructions.length
+
+    @tailrec
+    def inner(acc: Int, c: Int): Int = {
+      val jump = instructions(c)
+      val incr = if (jump >= 3) -1 else 1
+      if (c + jump >= size)
+        acc + 1
+      else {
+        instructions.update(c, jump + incr)
+        inner(acc + 1, c + jump)
+      }
+    }
+    inner(0, 0)
   }
 
-  def partOne(numString: String): Int = {
-    executeJumpInstructions(process(numString))
+  def process(input: String): Iterator[Int] = {
+    Source
+      .fromFile(input)
+      .getLines
+      .map(_.split("\\s+").map(_.toInt))
+      .flatten
   }
 
-  def partTwo(numString: String): Int = {
-    executeStrangerJumpInstructions(process(numString))
+  def partOneArray(numString: String): Int = {
+    val data = process(numString).toArray
+    perfTime {
+      executeJumpInstructionsArray(data)
+    }
   }
 
-  putStrLn("partOne: " + partOne(args(0)))
-  putStrLn("partTwo: " + partTwo(args(0)))
+  def partTwoArray(numString: String): Int = {
+    val data = process(numString).toArray
+    perfTime {
+      executeStrangerJumpInstructionsArray(data)
+    }
+  }
+
+  putStrLn("partOne: " + partOneArray(args(0)))
+  putStrLn("partTwo: " + partTwoArray(args(0)))
 }
