@@ -16,8 +16,8 @@ Yak Shave: [Scalastyle](#scalastyle)
 - [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/DayFour.scala)
 Yak Shave: [PR Template](#pr-template)
 
-- [x] [Day 5: ???](src/main/scala/ca/valencik/DayFive.scala)
-Yak Shave: ???
+- [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/DayFive.scala)
+Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
 
 Yak Shaves
@@ -47,3 +47,18 @@ The Travis CI setup got an update to make scalastyle run on CI for both `src` an
 ## PR Template
 
 I forgot to update the README when I implemented Day 3's yak shave, so I figured today's yak shave could be a simple PR template to remind me to update the README in the future.
+
+
+## High Performance Mutable Arrays
+
+Today we yak shaved in everyone's favourite activity, performance optimization.
+My first implementation of the part two solution took on the order of 200 seconds for my puzzle input.
+Admittedly this was a somewhat evil problem and solution pairing.
+With over 28 million steps in the maze for that input we were creating as many `Lists` and function calls.
+Refactoring to use `Array` instead of `List` was easy.
+And a simple import of [`scala.collection.mutable.ArrayOps`](http://www.scala-lang.org/api/2.12.2/scala/collection/mutable/ArrayOps.html#update) gives access to `Array.update` which mutates the `Array` in place.
+With the mutation happening in place we no longer needed to create the whole object each iteration so the recursive function got a bit of a refactor.
+SBT initially reported the mutable `Array` solution took 0 seconds to run.
+I had to add a performance timing util to find out it actually took on the order of 70 milliseconds!
+Truly a remarkable speedup.
+Fun!
