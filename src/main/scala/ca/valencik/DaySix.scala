@@ -4,36 +4,38 @@ import ca.valencik.Utils.putStrLn
 
 object DaySix extends App {
   def work(xs: List[Int]): List[Int] = {
-    lazy val currIndex = xs.indexOf(xs.max)
-    lazy val value = xs(currIndex)
-    lazy val len = xs.length
+    lazy val currIndex                   = xs.indexOf(xs.max)
+    lazy val value                       = xs(currIndex)
+    lazy val len                         = xs.length
     lazy val distributionLengthRemainder = value % len
-    lazy val equalDistributionAmount = value / len
+    lazy val equalDistributionAmount     = value / len
 
     def withinJumpRange(i: Int): Boolean = {
       val absJump = currIndex + distributionLengthRemainder
       if (absJump >= len)
         (i > currIndex || i <= (absJump) % len)
       else
-        (i > currIndex && i <= absJump )
+        (i > currIndex && i <= absJump)
     }
 
-    xs
-      .updated(currIndex, 0)
+    xs.updated(currIndex, 0)
       .map(_ + equalDistributionAmount)
       .zipWithIndex
-      .map{ case (e, i) => {
-        if (withinJumpRange(i))
-          e+1
-        else
-          e
-      }}
+      .map {
+        case (e, i) => {
+          if (withinJumpRange(i))
+            e + 1
+          else
+            e
+        }
+      }
   }
 
-  def process(numString: String): List[Int] = numString
-    .split("\\s+")
-    .map(_.toInt)
-    .toList
+  def process(numString: String): List[Int] =
+    numString
+      .split("\\s+")
+      .map(_.toInt)
+      .toList
 
   def partOne(numString: String): Int = {
     def inner(acc: Int, accList: List[List[Int]], curr: List[Int]): Int = {

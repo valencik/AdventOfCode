@@ -19,11 +19,12 @@ object DayTwo extends App {
       .map(row => {
         val numRow = row.split("\\s+").map(_.toInt)
         (for {
-        i <- 0 to numRow.length - 1
-        j <- 0 to numRow.length - 1
-        if i != j
+          i <- 0 to numRow.length - 1
+          j <- 0 to numRow.length - 1
+          if i != j
         } yield (i, j)).map {
-          case (i, j) => if (numRow(i) % numRow(j) == 0) numRow(i) / numRow(j) else 0
+          case (i, j) =>
+            if (numRow(i) % numRow(j) == 0) numRow(i) / numRow(j) else 0
         }.sum
       })
       .sum
