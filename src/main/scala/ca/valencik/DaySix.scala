@@ -30,31 +30,31 @@ object DaySix extends App {
       }}
   }
 
-  def partOne(init: List[Int]): Int = {
+  def process(numString: String): List[Int] = numString
+    .split("\\s+")
+    .map(_.toInt)
+    .toList
+
+  def partOne(numString: String): Int = {
     def inner(acc: Int, accList: List[List[Int]], curr: List[Int]): Int = {
       if (accList.contains(curr))
         acc
       else
         inner(acc + 1, accList :+ curr, work(curr))
     }
-    inner(0, List(List.empty), init)
+    inner(0, List(List.empty), process(numString))
   }
 
-  def partTwo(init: List[Int]): Int = {
+  def partTwo(numString: String): Int = {
     def inner(acc: Int, accList: List[List[Int]], curr: List[Int]): Int = {
       if (accList.contains(curr))
         accList.length - accList.indexOf(curr)
       else
         inner(acc + 1, accList :+ curr, work(curr))
     }
-    inner(0, List(List.empty), init)
+    inner(0, List(List.empty), process(numString))
   }
 
-  def process(numString: String): List[Int] = numString
-    .split("\\s+")
-    .map(_.toInt)
-    .toList
-
-  putStrLn("partOne: " + partOne(process(args(0))))
-  putStrLn("partTwo: " + partTwo(process(args(0))))
+  putStrLn("partOne: " + partOne(args(0)))
+  putStrLn("partTwo: " + partTwo(args(0)))
 }
