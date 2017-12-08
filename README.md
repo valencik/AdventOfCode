@@ -19,6 +19,9 @@ Yak Shave: [PR Template](#pr-template)
 - [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/DayFive.scala)
 Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
+- [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/DaySix.scala)
+Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
+
 
 Yak Shaves
 ==========
@@ -62,3 +65,12 @@ SBT initially reported the mutable `Array` solution took 0 seconds to run.
 I had to add a performance timing util to find out it actually took on the order of 70 milliseconds!
 Truly a remarkable speedup.
 Fun!
+
+
+## Auto format with Scalafmt
+
+[Scalafmt](http://scalameta.org/scalafmt/) turns messy code into controversially formatted code it seems.
+Scalafmt is very configurable but remains quite easy to use.
+Our [scalafmt config](.scalafmt.conf) is set to align code on found in the git tracked files and to maintain a max 80 columns.
+The align option appears to be very controversial, eliciting uncommonly strong reactions from the few people I showed it to.
+Nevertheless, our CI now tests that the code is formatted to scalafmt's liking.

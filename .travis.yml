@@ -11,4 +11,4 @@ jdk:
   - oraclejdk8
 
 script:
-  - sbt clean scalastyle test:scalastyle test
+  - sbt clean scalastyle test:scalastyle scalafmtTest test
