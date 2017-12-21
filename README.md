@@ -4,6 +4,10 @@ Advent Of Code in Scala with Yak Shaving
 See [Advent Of Code](http://adventofcode.com)
 
 
+[![Build Status](https://travis-ci.org/valencik/AdventOfCode.svg?branch=travis)](https://travis-ci.org/valencik/AdventOfCode)
+[![codecov](https://codecov.io/gh/valencik/AdventOfCode/branch/master/graph/badge.svg)](https://codecov.io/gh/valencik/AdventOfCode)
+
+
 - [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/DayOne.scala)
 Yak Shave: [Create Giter8 template](#giter8-template)
 
@@ -21,6 +25,9 @@ Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
 - [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/DaySix.scala)
 Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
+
+- [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/DaySeven.scala)
+Yak Shave: [Test Coverage](#test-coverage)
 
 
 Yak Shaves
@@ -74,3 +81,10 @@ Scalafmt is very configurable but remains quite easy to use.
 Our [scalafmt config](.scalafmt.conf) is set to align code on found in the git tracked files and to maintain a max 80 columns.
 The align option appears to be very controversial, eliciting uncommonly strong reactions from the few people I showed it to.
 Nevertheless, our CI now tests that the code is formatted to scalafmt's liking.
+
+
+## Test Coverage
+
+On mission critical code, like that operating on Santa's computer to print the Naughty or Nice List, one would be wise to track test coverage.
+Using the [sbt-scoverage](https://github.com/scoverage/sbt-scoverage) plugin we produce coverage reports that are then sent and checked by [codecov.io](https://codecov.io/gh/valencik/AdventOfCode/).
+Codecov.io is well integrated with GitHub and enables you to set coverage thresholds that are used in a PR check.
