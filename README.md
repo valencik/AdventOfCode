@@ -4,6 +4,10 @@ Advent Of Code in Scala with Yak Shaving
 See [Advent Of Code](http://adventofcode.com)
 
 
+[![Build Status](https://travis-ci.org/valencik/AdventOfCode.svg?branch=travis)](https://travis-ci.org/valencik/AdventOfCode)
+[![codecov](https://codecov.io/gh/valencik/AdventOfCode/branch/master/graph/badge.svg)](https://codecov.io/gh/valencik/AdventOfCode)
+
+
 - [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/DayOne.scala)
 Yak Shave: [Create Giter8 template](#giter8-template)
 
