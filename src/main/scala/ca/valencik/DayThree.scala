@@ -35,7 +35,7 @@ object DayThree extends App {
       else if (x < 0 && y < 0) 3
       else 4
     }
-    lazy val r      = ring(max(abs(x), abs(y)))
+    lazy val r      = max(abs(x), abs(y))
     lazy val cp     = compassPoints(r + 1)
     lazy val comp   = Compass(cp(0), cp(1), cp(2), cp(3))
     lazy val majorX = abs(x) > abs(y)
@@ -48,6 +48,23 @@ object DayThree extends App {
       else if (majorX) comp.e + y
       else comp.s + x
     }
+  }
+
+  case class SpiralNum(n: Int) {
+    lazy val r    = ring(n) - 1
+    lazy val cp   = compassPoints(r + 1)
+    lazy val comp = Compass(cp(0), cp(1), cp(2), cp(3))
+    lazy val aComp =
+      Compass(abs(cp(0) - n), abs(cp(1) - n), abs(cp(2) - n), abs(cp(3) - n))
+    lazy val dComp = Compass(cp(0) - n, cp(1) - n, cp(2) - n, cp(3) - n)
+    lazy val cMin  = List(aComp.e, aComp.n, aComp.w, aComp.s).min
+    lazy val point: Point = {
+      if (aComp.e == cMin) Point(r, -dComp.e)
+      else if (aComp.w == cMin) Point(-r, dComp.w)
+      else if (aComp.n == cMin) Point(dComp.n, r)
+      else Point(-dComp.s, -r)
+    }
+
   }
 
   def partOne(numString: String): Int = {
