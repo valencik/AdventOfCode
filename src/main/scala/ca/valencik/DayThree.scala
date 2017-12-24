@@ -40,7 +40,7 @@ object DayThree extends App {
     lazy val comp   = Compass(cp(0), cp(1), cp(2), cp(3))
     lazy val majorX = abs(x) > abs(y)
     lazy val majorY = abs(y) >= abs(x)
-    def spiralNum: Int = {
+    lazy val spiralNum = {
       if (x == 0 && y == 0) 1
       else if (quadrant == 1) if (majorX) comp.e + y else comp.n - x
       else if (quadrant == 2) if (majorX) comp.w - y else comp.n - x
@@ -48,6 +48,8 @@ object DayThree extends App {
       else if (majorX) comp.e + y
       else comp.s + x
     }
+    lazy val adj = for { i <- (-1 to 1); j <- (-1 to 1) } yield
+      Point(x + i, y + j)
   }
 
   case class SpiralNum(n: Int) {
@@ -64,13 +66,34 @@ object DayThree extends App {
       else if (aComp.n == cMin) Point(dComp.n, r)
       else Point(-dComp.s, -r)
     }
+  }
 
+  def squareSpiralSums(n: Int): Int = {
+    if (n == 1)
+      1
+    else {
+      val neighborSpirals =
+        SpiralNum(n).point.adj.map(_.spiralNum).filter(_ < n).toList
+      neighborSpirals.map(squareSpiralSums).sum
+    }
   }
 
   def partOne(numString: String): Int = {
     val num = numString.toInt
     val r   = ring(num)
     closestPoint(compassPoints(r), num) + r - 1
+  }
+
+  def partTwo(numString: String): Int = {
+    val target = numString.toInt
+    def inner(acc: Int): Int = {
+      val sss = squareSpiralSums(acc)
+      if (sss > target)
+        sss
+      else
+        inner(acc + 1)
+    }
+    inner(1)
   }
 
   putStrLn("partOne: " + partOne(args(0)))

@@ -66,4 +66,11 @@ class DayThreeSpec extends FlatSpec with Matchers {
   "DayThree numbers 1 to 1000" should "convert to point and back without change" in {
     (1 to 1000).map(SpiralNum(_).point.spiralNum) == (1 to 1000)
   }
+  "DayThree squareSpiralSums(1 to 10)" should "work" in {
+    (1 to 10).map(squareSpiralSums).toList shouldEqual List(1, 1, 2, 4, 5, 10,
+      11, 23, 25, 26)
+  }
+  "DayThree partTwo(325)" should "be 330" in {
+    partTwo("325") shouldEqual 330
+  }
 }
