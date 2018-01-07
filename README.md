@@ -8,6 +8,9 @@ See [Advent Of Code](http://adventofcode.com)
 [![codecov](https://codecov.io/gh/valencik/AdventOfCode/branch/master/graph/badge.svg)](https://codecov.io/gh/valencik/AdventOfCode)
 
 
+Week One
+--------
+
 - [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/DayOne.scala)
 Yak Shave: [Create Giter8 template](#giter8-template)
 
@@ -28,6 +31,13 @@ Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
 
 - [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/DaySeven.scala)
 Yak Shave: [Test Coverage](#test-coverage)
+
+
+Week Two
+--------
+
+- [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/DayEight.scala)
+Yak Shave: *pending*
 
 
 Yak Shaves
