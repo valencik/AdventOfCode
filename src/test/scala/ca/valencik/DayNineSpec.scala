@@ -5,15 +5,14 @@ import ca.valencik.DayNine._
 
 class DayNineSpec extends FlatSpec with Matchers {
 
-  "DayNine State.process" should "detect pure garbage" in {
-    val pureGarbage = State.empty
-    State.process("<>") shouldEqual pureGarbage
-    State.process("<random characters>") shouldEqual pureGarbage
-    State.process("<<<<>") shouldEqual pureGarbage
-    State.process("<{!>}>") shouldEqual pureGarbage
-    State.process("<!!>") shouldEqual pureGarbage
-    State.process("<!!!>>") shouldEqual pureGarbage
-    State.process("""<{o"i!a,<{i<a>""") shouldEqual pureGarbage
+  "DayNine State.process" should "detect pure garbage and have zero score" in {
+    State.process("<>").score shouldEqual 0
+    State.process("<random characters>").score shouldEqual 0
+    State.process("<<<<>").score shouldEqual 0
+    State.process("<{!>}>").score shouldEqual 0
+    State.process("<!!>").score shouldEqual 0
+    State.process("<!!!>>").score shouldEqual 0
+    State.process("""<{o"i!a,<{i<a>""").score shouldEqual 0
   }
 
   "DayNine State.process" should "return score that is sum of group depths" in {
@@ -25,6 +24,16 @@ class DayNineSpec extends FlatSpec with Matchers {
     State.process("{{<ab>},{<ab>},{<ab>},{<ab>}}").score shouldEqual 9
     State.process("{{<!!>},{<!!>},{<!!>},{<!!>}}").score shouldEqual 9
     State.process("{{<a!>},{<a!>},{<a!>},{<ab>}}").score shouldEqual 3
+  }
+
+  "DayNine State.process" should "return total garbage collected" in {
+    State.process("<>").garbageCount shouldEqual 0
+    State.process("<random characters>").garbageCount shouldEqual 17
+    State.process("<<<<>").garbageCount shouldEqual 3
+    State.process("<{!>}>").garbageCount shouldEqual 2
+    State.process("<!!>").garbageCount shouldEqual 0
+    State.process("<!!!>>").garbageCount shouldEqual 0
+    State.process("""<{o"i!a,<{i<a>""").garbageCount shouldEqual 10
   }
 
 }

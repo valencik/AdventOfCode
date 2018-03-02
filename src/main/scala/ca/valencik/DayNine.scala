@@ -6,14 +6,16 @@ object DayNine extends App {
 
   case class State(score: Int,
                    depth: Int,
+                   garbageCount: Int,
                    garbage: Boolean,
                    ignoreNext: Boolean) {
-    def incrDepth: State    = State(score, depth + 1, garbage, ignoreNext)
-    def incrScore: State    = State(score + depth, depth - 1, garbage, ignoreNext)
-    def startIgnore: State  = State(score, depth, garbage, true)
-    def endIgnore: State    = State(score, depth, garbage, false)
-    def startGarbage: State = State(score, depth, true, ignoreNext)
-    def endGarbage: State   = State(score, depth, false, ignoreNext)
+    def incrDepth: State    = this.copy(depth = depth + 1)
+    def incrScore: State    = this.copy(score = score + depth, depth = depth - 1)
+    def startIgnore: State  = this.copy(ignoreNext = true)
+    def endIgnore: State    = this.copy(ignoreNext = false)
+    def startGarbage: State = this.copy(garbage = true)
+    def endGarbage: State   = this.copy(garbage = false)
+    def incrGarbage: State  = this.copy(garbageCount = garbageCount + 1)
   }
   case object State {
     // scalastyle:off cyclomatic.complexity
@@ -22,21 +24,16 @@ object DayNine extends App {
       else
         c match {
           case '!' => s.startIgnore
-          case '<' => if (s.garbage) s else s.startGarbage
+          case '<' => if (s.garbage) s.incrGarbage else s.startGarbage
           case '>' => s.endGarbage
-          case '{' => if (s.garbage) s else s.incrDepth
-          case '}' => if (s.garbage) s else s.incrScore
-          case _   => s
+          case '{' => if (s.garbage) s.incrGarbage else s.incrDepth
+          case '}' => if (s.garbage) s.incrGarbage else s.incrScore
+          case _   => if (s.garbage) s.incrGarbage else s
         }
-    }
-    // scalastyle:on cyclomatic.complexity
-
-    val empty                        = State(0, 0, false, false)
+    } // scalastyle:on cyclomatic.complexity
+    val empty                        = State(0, 0, 0, false, false)
     def process(text: String): State = text.foldLeft(State.empty)(State.parse)
   }
 
-  val inputText = args.mkString("")
-  putStrLn(
-    State.process(inputText).toString
-  )
+  putStrLn(State.process(args.mkString).toString)
 }
