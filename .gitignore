@@ -1,3 +1,8 @@
+# Manually added
+
+.bloop-config/
+
+
 ### https://raw.github.com/github/gitignore/6931f87e856069713ab48065e2bbcffc0633f5c6/Scala.gitignore
 
 *.class

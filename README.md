@@ -37,7 +37,9 @@ Week Two
 --------
 
 - [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/DayEight.scala)
-Yak Shave: *pending*
+
+- [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/DayNine.scala)
+Yak Shave: [Bloop](#bloop)
 
 
 Yak Shaves
@@ -98,3 +100,13 @@ Nevertheless, our CI now tests that the code is formatted to scalafmt's liking.
 On mission critical code, like that operating on Santa's computer to print the Naughty or Nice List, one would be wise to track test coverage.
 Using the [sbt-scoverage](https://github.com/scoverage/sbt-scoverage) plugin we produce coverage reports that are then sent and checked by [codecov.io](https://codecov.io/gh/valencik/AdventOfCode/).
 Codecov.io is well integrated with GitHub and enables you to set coverage thresholds that are used in a PR check.
+
+
+## Bloop
+
+[Bloop](https://scalacenter.github.io/bloop/) is a new tool from the Scala Center that speeds up your edit-compile-test workflow by keeping warm JVMs available for these tasks.
+Installing and setting it up is quite easy, involving a single sbt plugin and a system level package installable via Homebrew.
+I can now run `bloop compile -p root` outside of an sbt session and get very fast compiles.
+Additionally the following commands are also quite useful:
+- `bloop test --project root`
+- `bloop run --project root --main ca.valencik.DayNine --args "$(pbpaste)"`
