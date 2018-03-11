@@ -41,6 +41,8 @@ Week Two
 - [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/DayNine.scala)
 Yak Shave: [Bloop](#bloop)
 
+- [x] [Day 10: Knot Hash](src/main/scala/ca/valencik/DayTen.scala)
+
 
 Yak Shaves
 ==========
