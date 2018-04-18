@@ -11,7 +11,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - sbt clean scalastyle test:scalastyle scalafmtTest coverage test coverageReport
+  - sbt clean scalastyle test:scalastyle scalafmtCheck scalafmtSbtCheck coverage test coverageReport
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
