@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DayOne extends App {
+object InverseCaptcha extends App {
   def partOne(numString: String): Int = {
     val listChars = numString.toList :+ numString.toList.head
     listChars
