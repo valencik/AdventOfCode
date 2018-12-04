@@ -4,7 +4,7 @@ import ca.valencik.Utils.putStrLn
 import scala.collection.immutable.HashMap
 import scala.util.Try
 
-object DayEight extends App {
+object Registers extends App {
 
   type State = HashMap[String, Int]
   def stateNil: HashMap[String, Int] = HashMap[String, Int]().empty

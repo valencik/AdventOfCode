@@ -36,7 +36,7 @@ Yak Shave: [Test Coverage](#test-coverage)
 Week Two
 --------
 
-- [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/DayEight.scala)
+- [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/Registers.scala)
 
 - [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/DayNine.scala)
 Yak Shave: [Bloop](#bloop)

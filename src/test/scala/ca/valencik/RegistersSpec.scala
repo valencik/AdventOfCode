@@ -1,15 +1,15 @@
 package ca.valencik
 
 import org.scalatest._
-import ca.valencik.DayEight._
+import ca.valencik.Registers._
 
-class DayEightSpec extends FlatSpec with Matchers {
+class RegistersSpec extends FlatSpec with Matchers {
   def testInput: Iterator[String] = """b inc 5 if a > 1
         |a inc 1 if b < 5
         |c dec -10 if a >= 1
         |c inc -20 if c == 10""".stripMargin.lines
 
-  "DayEight Instr" should "evaluate conditions with empty state" in {
+  "Registers Instr" should "evaluate conditions with empty state" in {
     val instr = Instr("b", "inc", 0, "a", "<=", -1)
     instr.condition(stateNil) shouldEqual false
   }
@@ -41,7 +41,7 @@ class DayEightSpec extends FlatSpec with Matchers {
     instrFalse.compute(stateNil) shouldEqual stateNil
   }
 
-  "DayEight parseInstructions" should "parse into a List[Instr]" in {
+  "Registers parseInstructions" should "parse into a List[Instr]" in {
     parseInstructions(testInput.toList) shouldEqual List(
       Instr("b", "inc", 5, "a", ">", 1),
       Instr("a", "inc", 1, "b", "<", 5),
@@ -50,7 +50,7 @@ class DayEightSpec extends FlatSpec with Matchers {
     )
   }
 
-  "DayEight computeInstructions" should "have correct final states" in {
+  "Registers computeInstructions" should "have correct final states" in {
     val instrs     = parseInstructions(testInput.toList)
     val finalState = computeInstructions(instrs)
     finalState.get("a") shouldEqual Some(1)
@@ -58,16 +58,16 @@ class DayEightSpec extends FlatSpec with Matchers {
     finalState.get("b") shouldEqual None
   }
 
-  "DayEight partOne largest register" should "be 1" in {
+  "Registers partOne largest register" should "be 1" in {
     partOne(testInput) shouldEqual 1
   }
 
-  "DayEight computeHighestRegister" should "be Some(10)" in {
+  "Registers computeHighestRegister" should "be Some(10)" in {
     val instrs = parseInstructions(testInput.toList)
     computeHighestRegister(instrs) shouldEqual Some(10)
   }
 
-  "DayEight partTwo largest register" should "be 10" in {
+  "Registers partTwo largest register" should "be 10" in {
     partTwo(testInput) shouldEqual 10
   }
 
