@@ -3,7 +3,7 @@ package ca.valencik
 import ca.valencik.Utils.putStrLn
 import scala.annotation.tailrec
 
-object DayTen extends App {
+object KnotHash extends App {
 
   case class CircList(size: Int, pos: Int, skip: Int, xs: Stream[Int]) {
     def hash(length: Int): CircList = CircList(
