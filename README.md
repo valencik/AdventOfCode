@@ -26,7 +26,7 @@ Yak Shave: [PR Template](#pr-template)
 - [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/TwistyTrampolines.scala)
 Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
-- [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/DaySix.scala)
+- [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/MemoryReallocation.scala)
 Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
 
 - [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/DaySeven.scala)

@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DaySix extends App {
+object MemoryReallocation extends App {
   def work(xs: List[Int]): List[Int] = {
     lazy val currIndex                   = xs.indexOf(xs.max)
     lazy val value                       = xs(currIndex)
