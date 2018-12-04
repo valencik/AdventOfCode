@@ -29,7 +29,7 @@ Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 - [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/MemoryReallocation.scala)
 Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
 
-- [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/DaySeven.scala)
+- [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/RecursiveCircus.scala)
 Yak Shave: [Test Coverage](#test-coverage)
 
 
