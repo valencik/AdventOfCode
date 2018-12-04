@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DayFour extends App {
+object Passphrases extends App {
   def validateDistinct(numString: String): Boolean = {
     val numList = numString.split(" ")
     numList.distinct.length == numList.length

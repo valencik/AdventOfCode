@@ -20,7 +20,7 @@ Yak Shave: [Travis CI](#travis-ci)
 - [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/DayThree.scala)
 Yak Shave: [Scalastyle](#scalastyle)
 
-- [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/DayFour.scala)
+- [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/Passphrases.scala)
 Yak Shave: [PR Template](#pr-template)
 
 - [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/DayFive.scala)
