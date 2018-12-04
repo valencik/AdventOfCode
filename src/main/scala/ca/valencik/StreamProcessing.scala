@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DayNine extends App {
+object StreamProcessing extends App {
 
   case class State(score: Int,
                    depth: Int,

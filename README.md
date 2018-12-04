@@ -38,7 +38,7 @@ Week Two
 
 - [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/Registers.scala)
 
-- [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/DayNine.scala)
+- [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/StreamProcessing.scala)
 Yak Shave: [Bloop](#bloop)
 
 - [x] [Day 10: Knot Hash](src/main/scala/ca/valencik/DayTen.scala)
@@ -111,4 +111,4 @@ Installing and setting it up is quite easy, involving a single sbt plugin and a 
 I can now run `bloop compile -p root` outside of an sbt session and get very fast compiles.
 Additionally the following commands are also quite useful:
 - `bloop test --project root`
-- `bloop run --project root --main ca.valencik.DayNine --args "$(pbpaste)"`
+- `bloop run --project root --main ca.valencik.StreamProcessing --args "$(pbpaste)"`
