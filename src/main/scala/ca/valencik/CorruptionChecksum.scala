@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DayTwo extends App {
+object CorruptionChecksum extends App {
   def partOne(numString: String): Int = {
     val rows = numString.lines.toList.map(_.trim).filter(_.nonEmpty)
     rows

@@ -1,11 +1,11 @@
 package ca.valencik
 
 import org.scalatest._
-import ca.valencik.DayNine._
+import ca.valencik.StreamProcessing._
 
-class DayNineSpec extends FlatSpec with Matchers {
+class StreamProcessingSpec extends FlatSpec with Matchers {
 
-  "DayNine State.process" should "detect pure garbage and have zero score" in {
+  "StreamProcessing State.process" should "detect pure garbage and have zero score" in {
     State.process("<>").score shouldEqual 0
     State.process("<random characters>").score shouldEqual 0
     State.process("<<<<>").score shouldEqual 0
@@ -15,7 +15,7 @@ class DayNineSpec extends FlatSpec with Matchers {
     State.process("""<{o"i!a,<{i<a>""").score shouldEqual 0
   }
 
-  "DayNine State.process" should "return score that is sum of group depths" in {
+  "StreamProcessing State.process" should "return score that is sum of group depths" in {
     State.process("{}").score shouldEqual 1
     State.process("{{{}}}").score shouldEqual 6
     State.process("{{},{}}").score shouldEqual 5
@@ -26,7 +26,7 @@ class DayNineSpec extends FlatSpec with Matchers {
     State.process("{{<a!>},{<a!>},{<a!>},{<ab>}}").score shouldEqual 3
   }
 
-  "DayNine State.process" should "return total garbage collected" in {
+  "StreamProcessing State.process" should "return total garbage collected" in {
     State.process("<>").garbageCount shouldEqual 0
     State.process("<random characters>").garbageCount shouldEqual 17
     State.process("<<<<>").garbageCount shouldEqual 3

@@ -2,7 +2,7 @@ package ca.valencik
 
 import ca.valencik.Utils.putStrLn
 
-object DaySeven extends App {
+object RecursiveCircus extends App {
 
   def maybeIndexOfOddBall[A](xs: List[A]): Option[Int] = {
     if (xs.length < 3)

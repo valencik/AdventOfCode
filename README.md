@@ -11,37 +11,37 @@ See [Advent Of Code](http://adventofcode.com)
 Week One
 --------
 
-- [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/DayOne.scala)
+- [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/InverseCaptcha.scala)
 Yak Shave: [Create Giter8 template](#giter8-template)
 
-- [x] [Day 2: Corruption Checksum](src/main/scala/ca/valencik/DayTwo.scala)
+- [x] [Day 2: Corruption Checksum](src/main/scala/ca/valencik/CorruptionChecksum.scala)
 Yak Shave: [Travis CI](#travis-ci)
 
-- [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/DayThree.scala)
+- [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/SpiralMemory.scala)
 Yak Shave: [Scalastyle](#scalastyle)
 
-- [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/DayFour.scala)
+- [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/Passphrases.scala)
 Yak Shave: [PR Template](#pr-template)
 
-- [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/DayFive.scala)
+- [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/TwistyTrampolines.scala)
 Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
-- [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/DaySix.scala)
+- [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/MemoryReallocation.scala)
 Yak Shave: [Auto format with Scalafmt](#auto-format-with-scalafmt)
 
-- [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/DaySeven.scala)
+- [x] [Day 7: Recursive Circus](src/main/scala/ca/valencik/RecursiveCircus.scala)
 Yak Shave: [Test Coverage](#test-coverage)
 
 
 Week Two
 --------
 
-- [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/DayEight.scala)
+- [x] [Day 8: I Heard You Like Registers](src/main/scala/ca/valencik/Registers.scala)
 
-- [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/DayNine.scala)
+- [x] [Day 9: Stream Processing](src/main/scala/ca/valencik/StreamProcessing.scala)
 Yak Shave: [Bloop](#bloop)
 
-- [x] [Day 10: Knot Hash](src/main/scala/ca/valencik/DayTen.scala)
+- [x] [Day 10: Knot Hash](src/main/scala/ca/valencik/KnotHash.scala)
 
 
 Yak Shaves
@@ -111,4 +111,4 @@ Installing and setting it up is quite easy, involving a single sbt plugin and a 
 I can now run `bloop compile -p root` outside of an sbt session and get very fast compiles.
 Additionally the following commands are also quite useful:
 - `bloop test --project root`
-- `bloop run --project root --main ca.valencik.DayNine --args "$(pbpaste)"`
+- `bloop run --project root --main ca.valencik.StreamProcessing --args "$(pbpaste)"`

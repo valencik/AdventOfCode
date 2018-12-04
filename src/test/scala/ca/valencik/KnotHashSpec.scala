@@ -1,10 +1,10 @@
 package ca.valencik
 
 import org.scalatest._
-import ca.valencik.DayTen._
+import ca.valencik.KnotHash._
 
-class DayTenSpec extends FlatSpec with Matchers {
-  "DayTen CircList" should "produce circular lists" in {
+class KnotHashSpec extends FlatSpec with Matchers {
+  "KnotHash CircList" should "produce circular lists" in {
     CircList(2).xs.take(4).toList shouldEqual List(0, 1, 0, 1)
     CircList(2).collect(4) shouldEqual List(0, 1, 0, 1)
   }
@@ -31,17 +31,17 @@ class DayTenSpec extends FlatSpec with Matchers {
     CircList(5).hashList(ls).collect() shouldEqual List(3, 4, 2, 1, 0)
   }
 
-  "partOne" should "produce correct product of first two numbers" in {
+  "KnotHash partOne" should "produce correct product of first two numbers" in {
     partOne("147,37,249,1,31,2,226,0,161,71,254,243,183,255,30,70") shouldBe 37230
   }
 
-  "multiRoundHash" should "degrade in number of hashes performed" in {
+  "KnotHash multiRoundHash" should "degrade in number of hashes performed" in {
     val input = List(3, 4, 1, 5)
     multiRoundHash(CircList(5), 0)(input).collect() shouldBe List(0, 1, 2, 3, 4)
     multiRoundHash(CircList(5), 1)(input).collect() shouldBe List(3, 4, 2, 1, 0)
   }
 
-  "partTwo" should "produce expected hexStrings" in {
+  "KnotHash partTwo" should "produce expected hexStrings" in {
     partTwo("") shouldBe "a2582a3a0e66e6e86e3812dcb672a272"
     partTwo("AoC 2017") shouldBe "33efeb34ea91902bb2f59c9920caa6cd"
     partTwo("1,2,3") shouldBe "3efbe78a8d82f29979031a4aa0b16a9d"
