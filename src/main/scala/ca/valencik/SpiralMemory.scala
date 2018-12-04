@@ -3,7 +3,7 @@ package ca.valencik
 import ca.valencik.Utils.putStrLn
 import Math.{abs, max, min}
 
-object DayThree extends App {
+object SpiralMemory extends App {
   def ssize(n: Int): Int = {
     (2 * n - 1) * (2 * n - 1)
   }
