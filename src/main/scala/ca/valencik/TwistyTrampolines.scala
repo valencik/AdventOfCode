@@ -6,7 +6,7 @@ import scala.annotation.tailrec
 import scala.io.Source
 import scala.collection.mutable.ArrayOps
 
-object DayFive extends App {
+object TwistyTrampolines extends App {
   def executeJumpInstructions(instructions: List[Int]): Int = {
     val size = instructions.length
 

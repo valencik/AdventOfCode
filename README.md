@@ -23,7 +23,7 @@ Yak Shave: [Scalastyle](#scalastyle)
 - [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/Passphrases.scala)
 Yak Shave: [PR Template](#pr-template)
 
-- [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/DayFive.scala)
+- [x] [Day 5: A Maze of Twisty Trampolines, All Alike](src/main/scala/ca/valencik/TwistyTrampolines.scala)
 Yak Shave: [High Performance Mutable Arrays](#high-performance-mutable-arrays)
 
 - [x] [Day 6: Memory Reallocation](src/main/scala/ca/valencik/DaySix.scala)
