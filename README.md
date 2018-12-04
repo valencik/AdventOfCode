@@ -11,13 +11,13 @@ See [Advent Of Code](http://adventofcode.com)
 Week One
 --------
 
-- [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/DayOne.scala)
+- [x] [Day 1: Inverse Captcha](src/main/scala/ca/valencik/InverseCaptcha.scala)
 Yak Shave: [Create Giter8 template](#giter8-template)
 
-- [x] [Day 2: Corruption Checksum](src/main/scala/ca/valencik/DayTwo.scala)
+- [x] [Day 2: Corruption Checksum](src/main/scala/ca/valencik/CorruptionChecksum.scala)
 Yak Shave: [Travis CI](#travis-ci)
 
-- [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/DayThree.scala)
+- [x] [Day 3: Spiral Memory](src/main/scala/ca/valencik/SpiralMemory.scala)
 Yak Shave: [Scalastyle](#scalastyle)
 
 - [x] [Day 4: High-Entropy Passphrases](src/main/scala/ca/valencik/Passphrases.scala)
