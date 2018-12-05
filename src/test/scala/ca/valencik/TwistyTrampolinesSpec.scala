@@ -17,6 +17,7 @@ class TwistyTrampolinesSpec extends FlatSpec with Matchers {
   }
 
   it should "implement Stranger Jump Instructions for Arrays" in {
-    TwistyTrampolines.executeStrangerJumpInstructionsArray(Array(0, 3, 0, 1, -3)) shouldEqual 10
+    TwistyTrampolines.executeStrangerJumpInstructionsArray(
+      Array(0, 3, 0, 1, -3)) shouldEqual 10
   }
 }

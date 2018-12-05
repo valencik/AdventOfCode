@@ -28,11 +28,12 @@ class RecursiveCircusSpec extends FlatSpec with Matchers {
   }
 
   "RecursiveCircus TreeProper sumWeight" should "return sum of own weight and children" in {
-    val t = RecursiveCircus.TreeProper("test",
-                                1,
-                                List(RecursiveCircus.TreeProper("test1", 1, List()),
-                                     RecursiveCircus.TreeProper("test2", 2, List()),
-                                     RecursiveCircus.TreeProper("test3", 3, List())))
+    val t = RecursiveCircus.TreeProper(
+      "test",
+      1,
+      List(RecursiveCircus.TreeProper("test1", 1, List()),
+           RecursiveCircus.TreeProper("test2", 2, List()),
+           RecursiveCircus.TreeProper("test3", 3, List())))
     t.sumWeight shouldEqual 7
   }
 

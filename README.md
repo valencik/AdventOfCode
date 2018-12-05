@@ -1,5 +1,5 @@
-Advent Of Code in Scala with Yak Shaving
-========================================
+Advent Of Code in Scala
+=======================
 
 See [Advent Of Code](http://adventofcode.com)
 
@@ -7,6 +7,18 @@ See [Advent Of Code](http://adventofcode.com)
 [![Build Status](https://travis-ci.org/valencik/AdventOfCode.svg?branch=travis)](https://travis-ci.org/valencik/AdventOfCode)
 [![codecov](https://codecov.io/gh/valencik/AdventOfCode/branch/master/graph/badge.svg)](https://codecov.io/gh/valencik/AdventOfCode)
 
+
+2018
+====
+
+Week One
+--------
+
+- [x] [Day 1: Chronal Calibration](src/main/scala/ca/valencik/ChronalCalibrator.scala)
+
+
+2017
+====
 
 Week One
 --------
