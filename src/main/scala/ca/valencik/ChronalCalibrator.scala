@@ -1,6 +1,6 @@
 package ca.valencik
 
-import ca.valencik.Utils.putStrLn
+import ca.valencik.Utils._
 
 object ChronalCalibrator extends App {
 
@@ -10,21 +10,6 @@ object ChronalCalibrator extends App {
 
   def partOne(lines: Iterable[String]): Int = {
     lines.map(_.toInt).sum
-  }
-
-  def infiniteStream[A](xs: Iterable[A]): Stream[A] = {
-    lazy val ss: Stream[A] = xs.toStream #::: ss
-    ss
-  }
-
-  def firstDuplicate[A](xs: Iterable[A]): A = {
-    var these: Iterable[A] = xs
-    var seen: Set[A]       = Set()
-    while (!seen(these.head)) {
-      seen += these.head
-      these = these.tail
-    }
-    these.head
   }
 
   def partTwo(lines: Iterable[String]): Int = {
