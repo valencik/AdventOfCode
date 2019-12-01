@@ -4,7 +4,6 @@ import ca.valencik.Utils.{putStrLn, perfTime}
 
 import scala.annotation.tailrec
 import scala.io.Source
-import scala.collection.mutable.ArrayOps
 
 object TwistyTrampolines extends App {
   def executeJumpInstructions(instructions: List[Int]): Int = {
