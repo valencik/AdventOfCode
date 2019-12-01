@@ -8,7 +8,7 @@ cache:
     - "$HOME/.sbt/boot"
 
 jdk:
-  - oraclejdk12
+  - adoptopenjdk8
 
 script:
   - sbt clean scalafmtCheck scalafmtSbtCheck coverage test coverageReport
