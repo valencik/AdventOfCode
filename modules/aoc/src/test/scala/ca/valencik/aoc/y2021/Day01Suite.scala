@@ -1,3 +1,5 @@
+package ca.valencik.aoc.y2021
+
 import cats.effect.{IO, SyncIO}
 import munit.CatsEffectSuite
 
