@@ -1,28 +1,31 @@
 package ca.valencik.aoc.y2021
 
-import cats.effect.{IO, IOApp}
+import cats.effect.{IO, IOApp, Async}
 import cats.syntax.all._
-import fs2.Stream
+import fs2.{Stream, text}
+import ca.valencik.aoc.AdventApp
 
-object Day01 extends IOApp.Simple:
-  val xs = List(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)
+object Day01 extends AdventApp(2021, 1):
+  def intStream[F[_]: Async](in: Stream[F, String]): Stream[F, Int] =
+    in
+      .through(text.lines)
+      .filter(s => !s.trim.isEmpty)
+      .map(_.toInt)
 
-  val p1 = Stream
-    .emits(xs)
-    .sliding(2)
-    .filter(p => p(1) > p(0))
-    .compile
-    .count
+  override def part1[F[_]: Async](in: Stream[F, String]): F[String] =
+    intStream(in)
+      .sliding(2)
+      .filter(p => p(1) > p(0))
+      .compile
+      .count
+      .map(_.toString)
 
-  val p2 = Stream
-    .emits(xs)
-    .sliding(3)
-    .map(_.combineAll)
-    .sliding(2)
-    .filter(p => p(1) > p(0))
-    .compile
-    .count
-
-  val run: IO[Unit] =
-    IO.println(s"Part one: $p1") *>
-      IO.println(s"Part two: $p2")
+  override def part2[F[_]: Async](in: Stream[F, String]): F[String] =
+    intStream(in)
+      .sliding(3)
+      .map(_.combineAll)
+      .sliding(2)
+      .filter(p => p(1) > p(0))
+      .compile
+      .count
+      .map(_.toString)

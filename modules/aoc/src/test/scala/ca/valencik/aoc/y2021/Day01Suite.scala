@@ -1,13 +1,28 @@
 package ca.valencik.aoc.y2021
 
-import cats.effect.{IO, SyncIO}
+import cats.effect.IO
+import fs2.Stream
 import munit.CatsEffectSuite
 
 class Day01Suite extends CatsEffectSuite:
-  test("Day01 part one") {
-    assertEquals(Day01.p1, 7L)
+  val example = Stream(
+    """|199
+       |200
+       |208
+       |210
+       |200
+       |207
+       |240
+       |269
+       |260
+       |263
+       |""".stripMargin
+  )
+
+  test("Day01 part one (example)") {
+    assertIO(Day01.part1(example), "7")
   }
 
-  test("Day01 part two") {
-    assertEquals(Day01.p2, 5L)
+  test("Day01 part two (example)") {
+    assertIO(Day01.part2(example), "5")
   }
