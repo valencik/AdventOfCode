@@ -4,7 +4,7 @@ import cats.effect.IO
 import fs2.Stream
 import munit.CatsEffectSuite
 
-class Day04Suite extends CatsEffectSuite:
+object Day04Props {
   val example = Stream(
     """|7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
        |
@@ -27,6 +27,10 @@ class Day04Suite extends CatsEffectSuite:
        | 2  0 12  3  7
        |""".stripMargin
   )
+}
+
+class Day04Suite extends CatsEffectSuite:
+  import Day04Props.example
 
   test("Day04 part one (example)") {
     assertIO(Day04.part1(example), "4512")
@@ -34,4 +38,15 @@ class Day04Suite extends CatsEffectSuite:
 
   test("Day04 part two (example)") {
     assertIO(Day04.part2(example), "1924")
+  }
+
+class Day04bSuite extends CatsEffectSuite:
+  import Day04Props.example
+
+  test("Day04b part one (example)") {
+    assertIO(Day04b.part1(example), "4512")
+  }
+
+  test("Day04b part two (example)") {
+    assertIO(Day04b.part2(example), "1924")
   }
